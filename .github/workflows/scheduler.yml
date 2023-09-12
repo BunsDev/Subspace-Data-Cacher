@@ -1,0 +1,27 @@
+name: Scheduler
+on:
+  schedule:
+    - cron: '0 * * * *'
+
+jobs:
+  master:
+    runs-on: ubuntu-22.04
+    name: Scheduler
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          ref: main
+          fetch-depth: 0
+        env:
+          token: ${{ secrets.GH_AUTOMATION_TOKEN }}
+      - name: Update data
+        run: |
+          npm install --no-save | grep -v 'YN0013'
+          npm run data:update-network-info
+      - name: Commit changes
+        uses: EndBug/add-and-commit@v9
+        with:
+          author_name: Scheduler
+          author_email: scheduler@github.io
+          message: 'Update data'

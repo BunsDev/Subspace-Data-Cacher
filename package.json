@@ -1,0 +1,22 @@
+{
+  "name": "subspace-data-cacher",
+  "version": "1.0.0",
+  "description": "Fetch and cache Subspace Data to JSON file with github action",
+  "main": "index.js",
+  "scripts": {
+    "data:update-network-info": "node ./scripts/updateDataNetworkInfo.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Koniverse/Subspace-Data-Cacher.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Koniverse/Subspace-Data-Cacher/issues"
+  },
+  "homepage": "https://github.com/Koniverse/Subspace-Data-Cacher#readme",
+  "devDependencies": {
+    "@polkadot/api": "^10.9.1"
+  }
+}
